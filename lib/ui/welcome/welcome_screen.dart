@@ -18,7 +18,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         body: IntroductionScreen(
       pages: listPagesViewModel,
       onDone: () {
-        Navigator.pushNamed(context, landingPageRoute);
+        Navigator.popAndPushNamed(context, loginPageRoute);
       },
       onSkip: () {
         // You can also override onSkip callback
