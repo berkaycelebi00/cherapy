@@ -1,5 +1,5 @@
+import 'package:cheraphy/constants/routes.dart';
 import 'package:cheraphy/ui/dashboard/pages/chat/chat_page.dart';
-import 'package:cheraphy/ui/dashboard/pages/considering_therapy/considering_therapy_page.dart';
 import 'package:cheraphy/ui/dashboard/pages/dashboard_main_page.dart';
 import 'package:cheraphy/ui/dashboard/pages/volunteer_listener/volunteer_listener_page.dart';
 import 'package:cheraphy/ui/providers/page_provider.dart';
@@ -18,7 +18,6 @@ class _DashboardPageState extends State<DashboardPage> {
   List<Widget> pages = [
     const DashBoardMainPage(),
     const ChatPage(),
-    const ConsiderTherapyPage(),
     const VolunteerPage()
   ];
   @override
@@ -44,7 +43,10 @@ class _DashboardPageState extends State<DashboardPage> {
                     children: [
                       const Text("Username"),
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.settings))
+                          onPressed: () {
+                            Navigator.popAndPushNamed(context, loginPageRoute);
+                          },
+                          icon: const Icon(Icons.settings))
                     ],
                   ),
                 ],
@@ -73,22 +75,12 @@ class _DashboardPageState extends State<DashboardPage> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.help),
-            title: const Text("Considering Therapy"),
-            trailing: const Icon(CupertinoIcons.chevron_right),
-            onTap: () {
-              Provider.of<PageProvider>(context, listen: false)
-                  .currentPageIndex = 2;
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
             leading: const Icon(Icons.chat_rounded),
             title: const Text("Volunteer as a listener"),
             trailing: const Icon(CupertinoIcons.chevron_right),
             onTap: () {
               Provider.of<PageProvider>(context, listen: false)
-                  .currentPageIndex = 3;
+                  .currentPageIndex = 2;
               Navigator.pop(context);
             },
           )

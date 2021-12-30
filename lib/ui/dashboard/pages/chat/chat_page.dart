@@ -11,7 +11,9 @@ class ChatPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, professionalPageRoute);
+            },
             child: const Text("Chat with a professional"),
           ),
           const SizedBox(
