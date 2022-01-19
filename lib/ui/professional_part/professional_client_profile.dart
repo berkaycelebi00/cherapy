@@ -14,18 +14,18 @@ class _ProfessionalClientProfilePageState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Client Name Details"),
+        title: const Text("Client Name Details"),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 120,
                 backgroundImage: AssetImage("assets/images/female-avatar.png"),
               ),
-              Text(
+              const Text(
                 "Mrs Sevgi",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
