@@ -25,11 +25,11 @@ class _ProfessionalStartPageState extends State<ProfessionalStartPage> {
               ElevatedButton(
                   onPressed: () => Navigator.pushNamed(
                       context, professionalRegisterPageRoute),
-                  child: Text("Get started")),
+                  child: const Text("Get started")),
               ElevatedButton(
                   onPressed: () => Navigator.pushNamed(
                       context, professionalDashboardPageROUTE),
-                  child: Text("Already have an account?")),
+                  child: const Text("Already have an account?")),
             ],
           ),
         ),

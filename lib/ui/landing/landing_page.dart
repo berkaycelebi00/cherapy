@@ -21,20 +21,20 @@ class _LandingPageState extends State<LandingPage> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: Card(
                       color: Colors.green.shade100,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(
+                          const Text(
                             "I need support and talk",
                             style: TextStyle(fontSize: 25),
                           ),
                           ElevatedButton(
                               onPressed: () {},
-                              child: Text("Let's start!",
+                              child: const Text("Let's start!",
                                   style: TextStyle(fontSize: 25)))
                         ],
                       ),
@@ -45,19 +45,19 @@ class _LandingPageState extends State<LandingPage> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: Card(
                       color: Colors.brown.shade100,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text("I want te give professional support",
+                          const Text("I want te give professional support",
                               textAlign: TextAlign.center,
                               style: TextStyle(fontSize: 25)),
                           ElevatedButton(
                               onPressed: () {},
-                              child: Text("Let's start!",
+                              child: const Text("Let's start!",
                                   style: TextStyle(fontSize: 25)))
                         ],
                       ),

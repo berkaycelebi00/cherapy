@@ -1,7 +1,5 @@
 import 'package:cheraphy/constants/routes.dart';
-import 'package:cheraphy/ui/providers/page_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class VolunteerPage extends StatefulWidget {
   const VolunteerPage({Key? key}) : super(key: key);
@@ -25,7 +23,8 @@ class _VolunteerPageState extends State<VolunteerPage> {
               ListTile(
                 leading: const Icon(Icons.account_box),
                 title: TextFormField(
-                  decoration: InputDecoration(label: Text("Name Surname")),
+                  decoration:
+                      const InputDecoration(label: Text("Name Surname")),
                 ),
               ),
               const SizedBox(
@@ -68,7 +67,7 @@ class _VolunteerPageState extends State<VolunteerPage> {
                       hasReadPolicy = !hasReadPolicy;
                     });
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(

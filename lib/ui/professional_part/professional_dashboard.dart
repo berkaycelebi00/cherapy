@@ -13,7 +13,7 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Professional - Dashboard"),
+        title: const Text("Professional - Dashboard"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -31,11 +31,11 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
                       "assets/images/overthink.png",
                       height: 100,
                     ),
-                    Text(
+                    const Text(
                       "My Clients",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       "You have 3 clients",
                       textAlign: TextAlign.center,
                     ),
@@ -54,11 +54,11 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
                       "assets/images/advertisement.jpg",
                       height: 100,
                     ),
-                    Text(
+                    const Text(
                       "My Ads",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       "You have 1 active advertisement",
                       textAlign: TextAlign.center,
                     ),
@@ -77,11 +77,11 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
                       "assets/images/profile.jpg",
                       height: 100,
                     ),
-                    Text(
+                    const Text(
                       "Profile",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       "Change your profile settings",
                       textAlign: TextAlign.center,
                     ),
@@ -100,11 +100,11 @@ class _ProfessionalDashboardState extends State<ProfessionalDashboard> {
                       "assets/images/calendar.jpg",
                       height: 100,
                     ),
-                    Text(
+                    const Text(
                       "Calendar",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       "Schedule your calendar and todos",
                       textAlign: TextAlign.center,
                     ),

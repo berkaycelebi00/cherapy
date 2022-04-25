@@ -28,37 +28,39 @@ class RouteGenerator {
   static Route<dynamic>? routeGenerator(RouteSettings settings) {
     switch (settings.name) {
       case landingPageRoute:
-        return _generateRoute(LandingPage(), settings);
+        return _generateRoute(const LandingPage(), settings);
       case loginPageRoute:
-        return _generateRoute(LoginPage(), settings);
+        return _generateRoute(const LoginPage(), settings);
       case registerPageRoute:
-        return _generateRoute(RegisterPage(), settings);
+        return _generateRoute(const RegisterPage(), settings);
       case dashboardPage:
-        return _generateRoute(DashboardPage(), settings);
+        return _generateRoute(const DashboardPage(), settings);
       case welcomeScreenRoute:
-        return _generateRoute(WelcomeScreen(), settings);
+        return _generateRoute(const WelcomeScreen(), settings);
       case freeChatPageRoute:
-        return _generateRoute(FreeChatPage(), settings);
+        return _generateRoute(const FreeChatPage(), settings);
       case professionalPageRoute:
-        return _generateRoute(ProfessionalPage(), settings);
+        return _generateRoute(const ProfessionalPage(), settings);
       case professionalStartPageRoute:
-        return _generateRoute(ProfessionalStartPage(), settings);
+        return _generateRoute(const ProfessionalStartPage(), settings);
       case professionalRegisterPageRoute:
-        return _generateRoute(ProfessionalRegisterPage(), settings);
+        return _generateRoute(const ProfessionalRegisterPage(), settings);
       case professionalDashboardPageROUTE:
-        return _generateRoute(ProfessionalDashboard(), settings);
+        return _generateRoute(const ProfessionalDashboard(), settings);
       case professionalEditPageRoute:
-        return _generateRoute(ProfessionalEditProfile(), settings);
+        return _generateRoute(const ProfessionalEditProfile(), settings);
       case professionalClientsPageRoute:
-        return _generateRoute(ProfessionalClientsPage(), settings);
+        return _generateRoute(const ProfessionalClientsPage(), settings);
       case professionalClientProfileRoute:
-        return _generateRoute(ProfessionalClientProfilePage(), settings);
+        return _generateRoute(const ProfessionalClientProfilePage(), settings);
       case professionalAdsPageRoute:
-        return _generateRoute(ProfessionalAdsPage(), settings);
+        return _generateRoute(const ProfessionalAdsPage(), settings);
       case professionalEditAdsPageRoute:
-        return _generateRoute(ProfessionalEditAdsPage(), settings);
+        return _generateRoute(const ProfessionalEditAdsPage(), settings);
       case professionalCalendarPageRoute:
-        return _generateRoute(ProfessionalCalendarPage(), settings);
+        return _generateRoute(const ProfessionalCalendarPage(), settings);
+      default:
+        return _generateRoute(const LandingPage(), settings);
     }
   }
 }

@@ -79,7 +79,7 @@ class _ProfessionalPageState extends State<ProfessionalPage> {
     ];
 
     List<Widget> doctorsWidget = [];
-    doctors.forEach((element) {
+    for (var element in doctors) {
       doctorsWidget.add(Card(
         elevation: 8,
         child: Column(
@@ -120,7 +120,7 @@ class _ProfessionalPageState extends State<ProfessionalPage> {
           ],
         ),
       ));
-    });
+    }
     return doctorsWidget;
   }
 

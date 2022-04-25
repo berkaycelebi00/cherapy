@@ -97,13 +97,13 @@ class _LoginPageState extends State<LoginPage> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               ElevatedButton(
                   onPressed: () =>
                       Navigator.pushNamed(context, professionalStartPageRoute),
-                  child: Text("Professional"))
+                  child: const Text("Professional"))
             ],
           )),
         ),

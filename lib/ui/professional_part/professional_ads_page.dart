@@ -13,7 +13,7 @@ class _ProfessionalAdsPageState extends State<ProfessionalAdsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("My Ads"),
+          title: const Text("My Ads"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -24,11 +24,11 @@ class _ProfessionalAdsPageState extends State<ProfessionalAdsPage> {
                 children: [
                   Image.network(
                       "https://previews.123rf.com/images/megaflopp/megaflopp1506/megaflopp150600100/41502916-beautiful-young-female-therapist-doctor-sitting-in-front-of-working-table-smiling-and-looking-in-cam.jpg?fj=1'"),
-                  Text(
+                  const Text(
                     "Mrs. Sevgi",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -64,25 +64,25 @@ class _ProfessionalAdsPageState extends State<ProfessionalAdsPage> {
                         ],
                       ),
                       Row(
-                        children: [Text("4.5 (413)")],
+                        children: const [Text("4.5 (413)")],
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text("I am a good therapist"),
-                  SizedBox(
+                  const Text("I am a good therapist"),
+                  const SizedBox(
                     height: 10,
                   ),
-                  Divider(),
-                  SizedBox(
+                  const Divider(),
+                  const SizedBox(
                     height: 10,
                   ),
                   ElevatedButton(
                       onPressed: () => Navigator.pushNamed(
                           context, professionalEditAdsPageRoute),
-                      child: Text("Edit"))
+                      child: const Text("Edit"))
                 ],
               ),
             ),

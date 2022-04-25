@@ -13,7 +13,7 @@ class _ProfessionalEditAdsPageState extends State<ProfessionalEditAdsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit advertisement"),
+        title: const Text("Edit advertisement"),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -27,42 +27,42 @@ class _ProfessionalEditAdsPageState extends State<ProfessionalEditAdsPage> {
                       "https://previews.123rf.com/images/megaflopp/megaflopp1506/megaflopp150600100/41502916-beautiful-young-female-therapist-doctor-sitting-in-front-of-working-table-smiling-and-looking-in-cam.jpg?fj=1'",
                       height: 150,
                     ),
-                    IconButton(onPressed: () {}, icon: Icon(Icons.edit))
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.edit))
                   ],
                 ),
-                Text(
+                const Text(
                   "Mrs. Smith",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("I am a good therapist"),
+                    const Text("I am a good therapist"),
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.edit,
                           size: 20,
                         ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Column(
                   children: [
                     ElevatedButton(
                       onPressed: () {},
-                      child: Text("Delete"),
+                      child: const Text("Delete"),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text("Save Changes"),
+                      child: const Text("Save Changes"),
                     )
                   ],
                 )

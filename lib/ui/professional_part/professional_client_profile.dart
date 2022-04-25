@@ -30,35 +30,37 @@ class _ProfessionalClientProfilePageState
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               Row(
-                children: [
+                children: const [
                   Icon(Icons.circle, color: Colors.green),
                   Text("Online")
                 ],
               ),
-              Divider(),
-              Text("Sex: Female"),
-              Divider(),
-              Text("Notes:"),
+              const Divider(),
+              const Text("Sex: Female"),
+              const Divider(),
+              const Text("Notes:"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Talk to her next week about her family.",
                     textAlign: TextAlign.center,
                   ),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.edit))
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.edit))
                 ],
               ),
-              Divider(),
-              Text("Client for '4' Months"),
-              SizedBox(
+              const Divider(),
+              const Text("Client for '4' Months"),
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(onPressed: () {}, child: Text("Send email")),
-                  ElevatedButton(onPressed: () {}, child: Text("End contract"))
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text("Send email")),
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text("End contract"))
                 ],
               )
             ],

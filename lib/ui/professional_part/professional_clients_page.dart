@@ -15,7 +15,7 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Clients"),
+        title: const Text("My Clients"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -31,21 +31,21 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                     "assets/images/female-avatar.png",
                     height: 100,
                   ),
-                  Text(
+                  const Text(
                     "Mrs. Sevgi",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text(
+                  const Text(
                     "Talk to her next week about her family.",
                     textAlign: TextAlign.center,
                   ),
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.circle, color: Colors.green),
                       Text("Online")
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   ElevatedButton(
@@ -53,10 +53,10 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => FreeChatPage()));
+                                builder: (context) => const FreeChatPage()));
                       },
-                      child: Text("Send Message")),
-                  SizedBox(
+                      child: const Text("Send Message")),
+                  const SizedBox(
                     height: 10,
                   ),
                   ElevatedButton(
@@ -64,7 +64,7 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                         Navigator.pushNamed(
                             context, professionalClientProfileRoute);
                       },
-                      child: Text("View Profile"))
+                      child: const Text("View Profile"))
                 ],
               ),
             ),
@@ -76,21 +76,21 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                     "assets/images/male-avatar.png",
                     height: 100,
                   ),
-                  Text(
+                  const Text(
                     "Mr. Savingi",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text(
+                  const Text(
                     "Don't forget to ask him about relationship",
                     textAlign: TextAlign.center,
                   ),
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.circle, color: Colors.red),
                       Text("Offline")
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   ElevatedButton(
@@ -98,10 +98,10 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => FreeChatPage()));
+                                builder: (context) => const FreeChatPage()));
                       },
-                      child: Text("Send Message")),
-                  SizedBox(
+                      child: const Text("Send Message")),
+                  const SizedBox(
                     height: 10,
                   ),
                   ElevatedButton(
@@ -109,7 +109,7 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                         Navigator.pushNamed(
                             context, professionalClientProfileRoute);
                       },
-                      child: Text("View Profile"))
+                      child: const Text("View Profile"))
                 ],
               ),
             ),
@@ -121,21 +121,21 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                     "assets/images/female-avatar.png",
                     height: 100,
                   ),
-                  Text(
+                  const Text(
                     "Mrs. Smith",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text(
+                  const Text(
                     "Don't forget to ask her about relationship",
                     textAlign: TextAlign.center,
                   ),
                   Row(
-                    children: [
+                    children: const [
                       Icon(Icons.circle, color: Colors.red),
                       Text("Offline")
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   ElevatedButton(
@@ -143,10 +143,10 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => FreeChatPage()));
+                                builder: (context) => const FreeChatPage()));
                       },
-                      child: Text("Send Message")),
-                  SizedBox(
+                      child: const Text("Send Message")),
+                  const SizedBox(
                     height: 10,
                   ),
                   ElevatedButton(
@@ -154,7 +154,7 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                         Navigator.pushNamed(
                             context, professionalClientProfileRoute);
                       },
-                      child: Text("View Profile"))
+                      child: const Text("View Profile"))
                 ],
               ),
             ),

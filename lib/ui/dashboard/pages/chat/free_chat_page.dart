@@ -18,7 +18,6 @@ class _FreeChatPageState extends State<FreeChatPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _loadMessages();
   }
@@ -44,7 +43,7 @@ class _FreeChatPageState extends State<FreeChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FreeChat"),
+        title: const Text("FreeChat"),
       ),
       body: Chat(
         messages: _messages,

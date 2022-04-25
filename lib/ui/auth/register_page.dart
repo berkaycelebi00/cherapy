@@ -1,4 +1,3 @@
-import 'package:cheraphy/constants/routes.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {

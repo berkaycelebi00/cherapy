@@ -15,7 +15,7 @@ class CheraphyApp extends StatelessWidget {
       providers: [ChangeNotifierProvider(create: (context) => PageProvider())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: WelcomeScreen(),
+        home: const WelcomeScreen(),
         theme: lightColorTheme(),
         darkTheme: darkColorTheme(),
         themeMode: ThemeMode.light,

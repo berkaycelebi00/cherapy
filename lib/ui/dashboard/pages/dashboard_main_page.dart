@@ -10,8 +10,6 @@ class DashBoardMainPage extends StatefulWidget {
 class _DashBoardMainPageState extends State<DashBoardMainPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Main"),
-    );
+    return const Text("Main");
   }
 }

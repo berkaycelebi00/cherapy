@@ -13,7 +13,7 @@ class _ProfessionalRegisterPageState extends State<ProfessionalRegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Professional - Register")),
+      appBar: AppBar(title: const Text("Professional - Register")),
       body: SingleChildScrollView(
         child: Form(
             child: Padding(
@@ -24,19 +24,19 @@ class _ProfessionalRegisterPageState extends State<ProfessionalRegisterPage> {
                 "assets/images/video-therapy.png",
                 height: 200,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "Register as a professional account",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                   "To register as a professional we need to know about you and your carier to prevent people from scammers"),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextFormField(
@@ -59,13 +59,13 @@ class _ProfessionalRegisterPageState extends State<ProfessionalRegisterPage> {
                   labelText: "Re-enter password",
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
                   onPressed: () => Navigator.popAndPushNamed(
                       context, professionalEditPageRoute),
-                  child: Text("Next"))
+                  child: const Text("Next"))
             ],
           ),
         )),

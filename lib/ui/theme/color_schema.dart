@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 ColorScheme lightColorScheme() {
   return ColorScheme(
       primary: Colors.blueAccent.shade100,
-      primaryVariant: Colors.blueAccent.shade400,
       secondary: Colors.greenAccent,
-      secondaryVariant: Colors.greenAccent.shade400,
       surface: Colors.white,
       background: Colors.white54,
       error: Colors.red,
@@ -20,9 +18,7 @@ ColorScheme lightColorScheme() {
 ColorScheme darkColorScheme() {
   return ColorScheme(
       primary: Colors.greenAccent.shade100,
-      primaryVariant: Colors.greenAccent.shade400,
       secondary: Colors.blueAccent,
-      secondaryVariant: Colors.blueAccent.shade400,
       surface: Colors.black45,
       background: Colors.black54,
       error: Colors.red,

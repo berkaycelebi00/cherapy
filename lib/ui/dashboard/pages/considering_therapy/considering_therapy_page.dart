@@ -5,8 +5,6 @@ class ConsiderTherapyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Consider"),
-    );
+    return const Text("Consider");
   }
 }

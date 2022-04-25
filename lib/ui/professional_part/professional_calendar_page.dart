@@ -52,13 +52,13 @@ class _ProfessionalCalendarPageState extends State<ProfessionalCalendarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Calendar"),
+        title: const Text("My Calendar"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //TODO Add CONTENT
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: ListView.builder(
           itemCount: todos.length,
@@ -77,7 +77,7 @@ class _ProfessionalCalendarPageState extends State<ProfessionalCalendarPage> {
                   // A SlidableAction can have an icon and/or a label.
                   SlidableAction(
                     onPressed: (context) {},
-                    backgroundColor: Color(0xFFFE4A49),
+                    backgroundColor: const Color(0xFFFE4A49),
                     foregroundColor: Colors.white,
                     icon: Icons.delete,
                     label: 'Delete',
@@ -86,7 +86,7 @@ class _ProfessionalCalendarPageState extends State<ProfessionalCalendarPage> {
                     onPressed: (context) {
                       //TODO EDİT CONTENT
                     },
-                    backgroundColor: Color(0xFF21B7CA),
+                    backgroundColor: const Color(0xFF21B7CA),
                     foregroundColor: Colors.white,
                     icon: Icons.edit,
                     label: 'Edit',
@@ -98,19 +98,19 @@ class _ProfessionalCalendarPageState extends State<ProfessionalCalendarPage> {
 
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   ListTile(
-                    leading: Icon(Icons.article),
+                    leading: const Icon(Icons.article),
                     title: Text(todos[index]["title"]),
                     subtitle: Text(todos[index]["content"]),
                     trailing: Text(todos[index]["date"]),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
-                  Divider()
+                  const Divider()
                 ],
               ),
             );
