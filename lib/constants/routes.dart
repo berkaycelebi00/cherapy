@@ -4,6 +4,7 @@ const chatPageRoute = "/chat";
 const loginPageRoute = "/login";
 const registerPageRoute = "/register";
 const dashboardPage = "/dashboard";
+const contentDetailPageRoute = "/dashboard/contentDetail";
 const freeChatPageRoute = "/freeChatPage";
 const professionalPageRoute = "/chat/professionalPage";
 const professionalStartPageRoute = "/professionalStart";

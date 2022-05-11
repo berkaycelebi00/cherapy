@@ -106,13 +106,8 @@ class _LoginPageState extends State<LoginPage> {
                                               .login(username, password);
                                       print(result);
                                       if (result["success"] == true) {
-                                        await CoolAlert.show(
-                                            context: context,
-                                            type: CoolAlertType.success,
-                                            text: 'Registration completed!',
-                                            autoCloseDuration:
-                                                const Duration(seconds: 2));
-                                        Navigator.pop(context);
+                                        Navigator.pushNamed(
+                                            context, dashboardPage);
                                       } else {
                                         CoolAlert.show(
                                           context: context,

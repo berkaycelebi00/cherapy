@@ -1,6 +1,8 @@
 import 'package:cheraphy/constants/routes.dart';
+import 'package:cheraphy/models/content.dart';
 import 'package:cheraphy/ui/auth/login_page.dart';
 import 'package:cheraphy/ui/auth/register_page.dart';
+import 'package:cheraphy/ui/dashboard/dashboard_content_detail.dart';
 import 'package:cheraphy/ui/dashboard/dashboard_page.dart';
 import 'package:cheraphy/ui/dashboard/pages/chat/free_chat_page.dart';
 import 'package:cheraphy/ui/landing/landing_page.dart';
@@ -35,6 +37,10 @@ class RouteGenerator {
         return _generateRoute(const RegisterPage(), settings);
       case dashboardPage:
         return _generateRoute(const DashboardPage(), settings);
+      case contentDetailPageRoute:
+        return _generateRoute(
+            ContentDetail(model: (settings.arguments) as ContentModel),
+            settings);
       case welcomeScreenRoute:
         return _generateRoute(const WelcomeScreen(), settings);
       case freeChatPageRoute:
