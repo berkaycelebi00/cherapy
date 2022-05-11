@@ -33,8 +33,8 @@ class AuthViewModel extends Auth with ChangeNotifier {
   @override
   Future<Map<String, dynamic>> registerProfessional(
       username, email, name, surname, password) async {
-    Map<String, dynamic> result =
-        await _authService.register(username, password, email);
+    Map<String, dynamic> result = await _authService.registerProfessional(
+        username, email, name, surname, password);
     return result;
   }
 }

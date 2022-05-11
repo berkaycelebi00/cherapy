@@ -63,6 +63,12 @@ class _ProfessionalRegisterPageState extends State<ProfessionalRegisterPage> {
                     ),
                   ),
                   TextFormField(
+                    controller: usernameController,
+                    decoration: const InputDecoration(
+                      labelText: "Username",
+                    ),
+                  ),
+                  TextFormField(
                     controller: emailController,
                     decoration: const InputDecoration(
                       labelText: "Email",
@@ -98,11 +104,12 @@ class _ProfessionalRegisterPageState extends State<ProfessionalRegisterPage> {
                                       surnameController.text,
                                       passwordController.text);
                           if (result["success"] == true) {
-                            CoolAlert.show(
+                            await CoolAlert.show(
                               context: context,
                               type: CoolAlertType.success,
                               text: "You are registered as professional",
                             );
+                            Navigator.pushNamed(context, loginPageRoute);
                           } else {
                             CoolAlert.show(
                               context: context,

@@ -107,8 +107,19 @@ class _LoginPageState extends State<LoginPage> {
                                               .login(username, password);
                                       print(result);
                                       if (result["success"] == true) {
-                                        Navigator.pushNamed(
-                                            context, dashboardPage);
+                                        List<String> roles =
+                                            Provider.of<AuthViewModel>(context,
+                                                    listen: false)
+                                                .user!
+                                                .roles!;
+                                        if (roles
+                                            .contains("ROLE_PROFESSIONAL")) {
+                                          Navigator.popAndPushNamed(context,
+                                              professionalDashboardPageROUTE);
+                                        } else {
+                                          Navigator.popAndPushNamed(
+                                              context, dashboardPage);
+                                        }
                                       } else {
                                         CoolAlert.show(
                                           context: context,

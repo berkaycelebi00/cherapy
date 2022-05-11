@@ -8,6 +8,7 @@ class APIHelper {
     var dio = Dio();
     late dynamic data;
     try {
+      print(params);
       response = await dio.post(
         currentAPILocation + endpoint,
         data: params,

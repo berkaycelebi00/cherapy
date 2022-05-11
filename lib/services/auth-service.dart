@@ -45,7 +45,7 @@ class AuthService extends Auth {
       "surname": surname,
       "email": email,
       "roles": ["professional"]
-    }, endpoint: loginEnpoint);
+    }, endpoint: registerEndpoint);
 
     return response;
   }
