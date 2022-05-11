@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      labelText: "Email",
+                      labelText: "Username",
                     ),
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
@@ -56,6 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                     decoration: const InputDecoration(
                       labelText: "Password",
                     ),
+                    obscureText: true,
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your password';

@@ -1,7 +1,9 @@
+import 'package:cheraphy/constants/api.dart';
 import 'package:cheraphy/constants/routes.dart';
 import 'package:cheraphy/models/content.dart';
 import 'package:cheraphy/view-models/content-view-model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DashBoardMainPage extends StatefulWidget {
   const DashBoardMainPage({Key? key}) : super(key: key);
@@ -12,39 +14,45 @@ class DashBoardMainPage extends StatefulWidget {
 
 class _DashBoardMainPageState extends State<DashBoardMainPage> {
   final ContentViewModel contentViewModel = ContentViewModel();
-  List<ContentModel> fakeList = [
-    ContentModel(
-        id: 0,
-        imageUrl:
-            "https://previews.123rf.com/images/megaflopp/megaflopp1506/megaflopp150600100/41502916-beautiful-young-female-therapist-doctor-sitting-in-front-of-working-table-smiling-and-looking-in-cam.jpg?fj=1'",
-        content: "Lorem test",
-        title: "Test title"),
-    ContentModel(
-        id: 1,
-        imageUrl:
-            "https://previews.123rf.com/images/megaflopp/megaflopp1506/megaflopp150600100/41502916-beautiful-young-female-therapist-doctor-sitting-in-front-of-working-table-smiling-and-looking-in-cam.jpg?fj=1'",
-        content: "Lorem test",
-        title: "Test title"),
-    ContentModel(
-        id: 2,
-        imageUrl:
-            "https://previews.123rf.com/images/megaflopp/megaflopp1506/megaflopp150600100/41502916-beautiful-young-female-therapist-doctor-sitting-in-front-of-working-table-smiling-and-looking-in-cam.jpg?fj=1'",
-        content: "Lorem test",
-        title: "Test title"),
-    ContentModel(
-        id: 3,
-        imageUrl:
-            "https://previews.123rf.com/images/megaflopp/megaflopp1506/megaflopp150600100/41502916-beautiful-young-female-therapist-doctor-sitting-in-front-of-working-table-smiling-and-looking-in-cam.jpg?fj=1'",
-        content: "Lorem test",
-        title: "Test title"),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: contentViewModel.getAllContentTiles(),
-        builder: ((context, snapshot) {
+        future: Provider.of<ContentViewModel>(context).getAllContentTiles(),
+        builder: ((context, AsyncSnapshot<List<ContentModel>> snapshot) {
           if (snapshot.hasData) {
-            return SizedBox();
+            print(snapshot.data);
+            return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) => Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Card(
+                        child: Padding(
+                          padding: EdgeInsets.all(16),
+                          child: GestureDetector(
+                            onTap: (() => Navigator.pushNamed(
+                                context, contentDetailPageRoute,
+                                arguments: snapshot.data![index])),
+                            child: Hero(
+                                tag: snapshot.data![index],
+                                child: Material(
+                                  type: MaterialType.transparency,
+                                  child: Column(
+                                    children: [
+                                      Image.network(currentStaticLocation +
+                                          imagesEndPoint +
+                                          snapshot.data![index].imageUrl!),
+                                      SizedBox(
+                                        height: 16,
+                                      ),
+                                      Text(snapshot.data![index].title!)
+                                    ],
+                                  ),
+                                )),
+                          ),
+                        ),
+                      ),
+                    ));
           } else if (snapshot.hasError) {
             return Center(
               child: Text(snapshot.error.toString()),

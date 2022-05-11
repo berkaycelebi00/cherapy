@@ -29,4 +29,31 @@ class APIHelper {
 
     return data;
   }
+
+  Future<dynamic> get(
+      {Map<String, dynamic>? payload, required String endpoint}) async {
+    late Response response;
+    var dio = Dio();
+    late dynamic data;
+    try {
+      response = await dio.get(
+        currentAPILocation + endpoint,
+        options: Options(
+          followRedirects: false,
+          validateStatus: (status) {
+            return status! < 500;
+          },
+        ),
+      );
+      data = response.data;
+    } catch (e) {
+      print(e);
+      data = {
+        "success": "false",
+        "message": "Error occured when sending registration"
+      };
+    }
+
+    return data;
+  }
 }

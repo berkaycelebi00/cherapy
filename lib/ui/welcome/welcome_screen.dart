@@ -1,4 +1,5 @@
 import 'package:cheraphy/constants/routes.dart';
+import 'package:cheraphy/services/settingsHelper.dart';
 import 'package:cheraphy/ui/welcome/welcome_pages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +18,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
         body: IntroductionScreen(
       pages: listPagesViewModel,
-      onDone: () {
-        Navigator.popAndPushNamed(context, loginPageRoute);
+      onDone: () async {
+        SettingHelper settingHelper = SettingHelper();
+        await settingHelper.setWelcome(true);
+        Navigator.pushNamed(context, loginPageRoute);
       },
       onSkip: () {
         // You can also override onSkip callback

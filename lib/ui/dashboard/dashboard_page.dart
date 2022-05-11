@@ -3,6 +3,7 @@ import 'package:cheraphy/ui/dashboard/pages/chat/chat_page.dart';
 import 'package:cheraphy/ui/dashboard/pages/dashboard_main_page.dart';
 import 'package:cheraphy/ui/dashboard/pages/volunteer_listener/volunteer_listener_page.dart';
 import 'package:cheraphy/ui/providers/page_provider.dart';
+import 'package:cheraphy/view-models/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -41,7 +42,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text("Username"),
+                      Text(Provider.of<AuthViewModel>(context).user!.username!),
                       IconButton(
                           onPressed: () {
                             Navigator.popAndPushNamed(context, loginPageRoute);
@@ -74,16 +75,20 @@ class _DashboardPageState extends State<DashboardPage> {
               Navigator.pop(context);
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.chat_rounded),
-            title: const Text("Volunteer as a listener"),
-            trailing: const Icon(CupertinoIcons.chevron_right),
-            onTap: () {
-              Provider.of<PageProvider>(context, listen: false)
-                  .currentPageIndex = 2;
-              Navigator.pop(context);
-            },
-          )
+          !(Provider.of<AuthViewModel>(context, listen: false)
+                  .user!
+                  .isVolunteer!)
+              ? ListTile(
+                  leading: const Icon(Icons.chat_rounded),
+                  title: const Text("Volunteer as a listener"),
+                  trailing: const Icon(CupertinoIcons.chevron_right),
+                  onTap: () {
+                    Provider.of<PageProvider>(context, listen: false)
+                        .currentPageIndex = 2;
+                    Navigator.pop(context);
+                  },
+                )
+              : SizedBox()
         ]),
       ),
       body: getCurrentPage(),
