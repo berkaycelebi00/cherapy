@@ -6,6 +6,9 @@ class User {
   List<String>? roles;
   bool? isVolunteer;
   String? accessToken;
+  String? name;
+  String? surname;
+  String? photoAddress;
 
   User(
       {this.id,
@@ -14,6 +17,9 @@ class User {
       this.email,
       this.roles,
       this.isVolunteer,
+      this.name,
+      this.surname,
+      this.photoAddress,
       this.accessToken});
 
   User.fromJson(Map<String, dynamic> json) {
@@ -24,6 +30,9 @@ class User {
     roles = json['roles'].cast<String>();
     isVolunteer = json['isVolunteer'];
     accessToken = json['accessToken'];
+    photoAddress = json["photoAddress"];
+    name = json["name"];
+    surname = json["surname"];
   }
 
   Map<String, dynamic> toJson() {
@@ -35,6 +44,9 @@ class User {
     data['roles'] = this.roles;
     data['isVolunteer'] = this.isVolunteer;
     data['accessToken'] = this.accessToken;
+    data["photoAddress"] = this.photoAddress;
+    data["surname"] = this.surname;
+    data["name"] = this.name;
     return data;
   }
 }

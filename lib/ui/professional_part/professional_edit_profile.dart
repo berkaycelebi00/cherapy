@@ -1,4 +1,8 @@
+import 'package:cheraphy/constants/api.dart';
+import 'package:cheraphy/models/user.dart';
+import 'package:cheraphy/view-models/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfessionalEditProfile extends StatefulWidget {
   const ProfessionalEditProfile({Key? key}) : super(key: key);
@@ -9,8 +13,22 @@ class ProfessionalEditProfile extends StatefulWidget {
 }
 
 class _ProfessionalEditProfileState extends State<ProfessionalEditProfile> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController surnameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+
+  @override
+  void initState() {
+    User user = Provider.of<AuthViewModel>(context, listen: false).user!;
+    nameController.text = user.name ?? "";
+    surnameController.text = user.surname ?? "";
+    emailController.text = user.email ?? "";
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    User user = Provider.of<AuthViewModel>(context, listen: false).user!;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Edit profile"),
@@ -23,23 +41,20 @@ class _ProfessionalEditProfileState extends State<ProfessionalEditProfile> {
               children: [
                 Column(
                   children: [
-                    const CircleAvatar(
+                    CircleAvatar(
                       radius: 120,
                       backgroundImage: NetworkImage(
-                        "https://previews.123rf.com/images/megaflopp/megaflopp1506/megaflopp150600100/41502916-beautiful-young-female-therapist-doctor-sitting-in-front-of-working-table-smiling-and-looking-in-cam.jpg?fj=1'",
+                        currentStaticLocation +
+                            imagesEndPoint +
+                            (user.photoAddress ?? "default.jpg"),
                       ),
                     ),
                     IconButton(onPressed: () {}, icon: const Icon(Icons.edit))
                   ],
                 ),
-                Row(
-                  children: [
-                    const Text(
-                      "Mrs. Smith",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.edit))
-                  ],
+                Text(
+                  user.username ?? "No name",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Card(
                   color: Colors.red.shade100,
@@ -55,18 +70,21 @@ class _ProfessionalEditProfileState extends State<ProfessionalEditProfile> {
                   ),
                 ),
                 TextFormField(
+                  controller: nameController,
                   decoration: const InputDecoration(
-                    labelText: "Name Surname",
+                    labelText: "Name",
                   ),
                 ),
                 TextFormField(
+                  controller: surnameController,
+                  decoration: const InputDecoration(
+                    labelText: "Surname",
+                  ),
+                ),
+                TextFormField(
+                  controller: emailController,
                   decoration: const InputDecoration(
                     labelText: "Email",
-                  ),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: "Country",
                   ),
                 ),
                 const SizedBox(
