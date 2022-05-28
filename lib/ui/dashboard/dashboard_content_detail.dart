@@ -26,7 +26,7 @@ class ContentDetail extends StatelessWidget {
             child: fromHeroContext.widget,
           );
         },
-        tag: model.id!,
+        tag: "deneme0",
         child: Material(
             type: MaterialType.transparency,
             child: Column(

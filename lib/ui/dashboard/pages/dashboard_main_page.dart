@@ -34,7 +34,7 @@ class _DashBoardMainPageState extends State<DashBoardMainPage> {
                                 context, contentDetailPageRoute,
                                 arguments: snapshot.data![index])),
                             child: Hero(
-                                tag: snapshot.data![index],
+                                tag: snapshot.data![index].id!,
                                 child: Material(
                                   type: MaterialType.transparency,
                                   child: Column(

@@ -10,7 +10,9 @@ class AuthViewModel extends Auth with ChangeNotifier {
   Future<Map<String, dynamic>> login(username, password) async {
     Map<String, dynamic> response =
         await _authService.login(username, password);
-    user = User.fromJson(response);
+    try {
+      user = User.fromJson(response);
+    } catch (e) {}
     return response;
   }
 
