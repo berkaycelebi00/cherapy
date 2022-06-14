@@ -16,3 +16,4 @@ const professionalClientProfileRoute = "/professionalClientProfile";
 const professionalAdsPageRoute = "/professionalAdsPage";
 const professionalEditAdsPageRoute = "/professionalEditAds";
 const professionalCalendarPageRoute = "/professionalCalendar";
+const chatWaitingRoomPageRoute = "/chat/waitingRoom";

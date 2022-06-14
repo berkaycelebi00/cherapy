@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  introduction_screen: ^2.1.0
+  introduction_screen: ^3.0.2
   provider: ^6.0.1
   flutter_chat_ui: ^1.5.3
   flutter_slidable: ^1.2.0
@@ -38,6 +38,8 @@ dependencies:
   hive: ^2.1.0
   intl: ^0.17.0
   bot_toast: ^4.0.2
+  image_picker: ^0.8.5+3
+  socket_io_client: ^2.0.0-beta.4-nullsafety.0
 
 
 
@@ -55,7 +57,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

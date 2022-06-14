@@ -1,0 +1,1 @@
+enum ChatUserType { listener, narrator }

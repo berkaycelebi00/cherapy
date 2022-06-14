@@ -1,7 +1,9 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:cheraphy/constants/api.dart';
 import 'package:cheraphy/models/user.dart';
 import 'package:cheraphy/view-models/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 class ProfessionalEditProfile extends StatefulWidget {
@@ -16,6 +18,7 @@ class _ProfessionalEditProfileState extends State<ProfessionalEditProfile> {
   TextEditingController nameController = TextEditingController();
   TextEditingController surnameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  XFile? image;
 
   @override
   void initState() {
@@ -49,7 +52,14 @@ class _ProfessionalEditProfileState extends State<ProfessionalEditProfile> {
                             (user.photoAddress ?? "default.jpg"),
                       ),
                     ),
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.edit))
+                    IconButton(
+                        onPressed: () async {
+                          final ImagePicker _picker = ImagePicker();
+                          image = await _picker.pickImage(
+                              source: ImageSource.gallery);
+                          print(image?.mimeType);
+                        },
+                        icon: const Icon(Icons.edit))
                   ],
                 ),
                 Text(
@@ -102,8 +112,43 @@ class _ProfessionalEditProfileState extends State<ProfessionalEditProfile> {
                   height: 20,
                 ),
                 ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
+                    onPressed: () async {
+                      Map<String, dynamic> result = await Provider.of<
+                              AuthViewModel>(context, listen: false)
+                          .updateProfile(
+                              Provider.of<AuthViewModel>(context, listen: false)
+                                  .user!
+                                  .id,
+                              nameController.text,
+                              surnameController.text,
+                              emailController.text);
+                      if (image != null) {
+                        Map<String, dynamic> imageResult =
+                            await Provider.of<AuthViewModel>(context,
+                                    listen: false)
+                                .updateProfilePhoto(
+                                    Provider.of<AuthViewModel>(context,
+                                        listen: false),
+                                    image!);
+                        print(imageResult["success"]);
+                      }
+
+                      if (result["success"] == true) {
+                        Provider.of<AuthViewModel>(context, listen: false)
+                            .user!
+                            .name = nameController.text;
+                        Provider.of<AuthViewModel>(context, listen: false)
+                            .user!
+                            .surname = surnameController.text;
+                        Provider.of<AuthViewModel>(context, listen: false)
+                            .user!
+                            .email = emailController.text;
+
+                        Navigator.pop(context);
+                        BotToast.showText(text: "Profile Updated");
+                      } else {
+                        BotToast.showText(text: "Profile could not be updated");
+                      }
                     },
                     child: const Text("Save Changes")),
                 const SizedBox(

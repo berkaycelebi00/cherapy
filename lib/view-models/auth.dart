@@ -1,7 +1,10 @@
+import 'dart:typed_data';
+
 import 'package:cheraphy/base/auth.dart';
 import 'package:cheraphy/models/user.dart';
 import 'package:cheraphy/services/auth-service.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AuthViewModel extends Auth with ChangeNotifier {
   final AuthService _authService = AuthService();
@@ -38,5 +41,15 @@ class AuthViewModel extends Auth with ChangeNotifier {
     Map<String, dynamic> result = await _authService.registerProfessional(
         username, email, name, surname, password);
     return result;
+  }
+
+  @override
+  Future<Map<String, dynamic>> updateProfile(id, name, surname, email) async {
+    return await _authService.updateProfile(id, name, surname, email);
+  }
+
+  @override
+  Future<Map<String, dynamic>> updateProfilePhoto(id, XFile photo) async {
+    return await _authService.updateProfilePhoto(id, photo);
   }
 }

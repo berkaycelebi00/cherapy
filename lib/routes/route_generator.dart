@@ -1,9 +1,11 @@
+import 'package:cheraphy/constants/enum.dart';
 import 'package:cheraphy/constants/routes.dart';
 import 'package:cheraphy/models/content.dart';
 import 'package:cheraphy/ui/auth/login_page.dart';
 import 'package:cheraphy/ui/auth/register_page.dart';
 import 'package:cheraphy/ui/dashboard/dashboard_content_detail.dart';
 import 'package:cheraphy/ui/dashboard/dashboard_page.dart';
+import 'package:cheraphy/ui/dashboard/pages/chat/chat_waiting_room.dart';
 import 'package:cheraphy/ui/dashboard/pages/chat/free_chat_page.dart';
 import 'package:cheraphy/ui/landing/landing_page.dart';
 import 'package:cheraphy/ui/professional/professional_page.dart';
@@ -65,6 +67,12 @@ class RouteGenerator {
         return _generateRoute(const ProfessionalEditAdsPage(), settings);
       case professionalCalendarPageRoute:
         return _generateRoute(const ProfessionalCalendarPage(), settings);
+      case chatWaitingRoomPageRoute:
+        return _generateRoute(
+            ChatWaitingRoom(
+              userType: settings.arguments as ChatUserType,
+            ),
+            settings);
       default:
         return _generateRoute(const LandingPage(), settings);
     }
