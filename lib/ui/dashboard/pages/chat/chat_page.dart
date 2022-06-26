@@ -1,10 +1,8 @@
+import 'package:cheraphy/constants/enum.dart';
 import 'package:cheraphy/constants/routes.dart';
-import 'package:cheraphy/services/socket-service.dart';
 import 'package:cheraphy/view-models/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:socket_io_client/socket_io_client.dart' as IO;
-import 'package:socket_io_client/socket_io_client.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -14,11 +12,9 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  late final SocketService service;
   @override
   void initState() {
     super.initState();
-    service = SocketService();
   }
 
   @override
@@ -38,7 +34,8 @@ class _ChatPageState extends State<ChatPage> {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, freeChatPageRoute);
+              Navigator.pushNamed(context, chatWaitingRoomPageRoute,
+                  arguments: ChatUserType.narrator);
             },
             child: const Text("Start a chat with random listener(Free)"),
           ),
@@ -48,7 +45,10 @@ class _ChatPageState extends State<ChatPage> {
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, chatWaitingRoomPageRoute,
+                        arguments: ChatUserType.listener);
+                  },
                   child: const Text("Start a chat as a listener")),
             )
         ],

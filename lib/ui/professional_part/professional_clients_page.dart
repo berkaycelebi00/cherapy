@@ -1,3 +1,4 @@
+import 'package:cheraphy/constants/enum.dart';
 import 'package:cheraphy/constants/routes.dart';
 import 'package:cheraphy/ui/dashboard/pages/chat/free_chat_page.dart';
 import 'package:cheraphy/view-models/auth.dart';
@@ -84,11 +85,9 @@ class _ProfessionalClientsPageState extends State<ProfessionalClientsPage> {
                                 ),
                                 ElevatedButton(
                                     onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const FreeChatPage()));
+                                      Navigator.pushNamed(
+                                          context, freeChatPageRoute,
+                                          arguments: ChatUserType.listener);
                                     },
                                     child: const Text("Send Message")),
                                 const SizedBox(

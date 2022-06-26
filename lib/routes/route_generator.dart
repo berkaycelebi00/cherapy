@@ -46,7 +46,11 @@ class RouteGenerator {
       case welcomeScreenRoute:
         return _generateRoute(const WelcomeScreen(), settings);
       case freeChatPageRoute:
-        return _generateRoute(const FreeChatPage(), settings);
+        return _generateRoute(
+            FreeChatPage(
+              userType: settings.arguments as ChatUserType,
+            ),
+            settings);
       case professionalPageRoute:
         return _generateRoute(const ProfessionalPage(), settings);
       case professionalStartPageRoute:
